@@ -1,9 +1,13 @@
 /* Write a function to do the division operation without using the built-in division*/
 
 function division(number, dividedBy) {
-    // Write you logic here.
-    return;
+    if (number == 0 || dividedBy == 0 || number < dividedBy) {
+        return (0);
+    } else {
+        return (1 + division(number - dividedBy, dividedBy));
+    }
 }
+
 
 /* Write a function that implement Math.pow(x,n) but using recursion
 Example:
@@ -12,8 +16,12 @@ pow(2,4) = 16
 
 
 function pow(x, n) {
+    if (n == 0) {
+        return (1);
+    } else {
+        return (x * pow(x, n - 1));
+    }
     // Write you logic here.
-    return;
 }
 
 /* The Fibonacci Series is a numeric series starting with the integers 0 and 1. In this series,
